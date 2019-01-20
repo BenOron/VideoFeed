@@ -1,7 +1,6 @@
 import React from "react";
 import "./VideoItem.css";
 import VideoItemHelper from "./videoItemHelper";
-import { library } from "@fortawesome/fontawesome-svg-core";
 
 import {
   faArrowAltCircleLeft,
@@ -36,7 +35,11 @@ class VideoItem extends React.Component {
             <div className="front">
               <div className="content">
                 <div className="headerfront">
-                  <h5 className="motto">{this.props.videoItem.title}</h5>
+                  <h5 className="motto">
+                    {!this.props.videoItem.title
+                      ? "###This Data is missing###"
+                      : this.props.videoItem.title}
+                  </h5>
                 </div>
                 <VideoItemHelper {...this.props} />
                 <div className="footer">
