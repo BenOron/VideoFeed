@@ -11,6 +11,14 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class VideoItem extends React.Component {
+  componentDidUpdate() {
+    window.FB.XFBML.parse();
+  }
+
+  componentDidMount() {
+    document.addEventListener("fb_init", e => window.FB.XFBML.parse());
+  }
+
   rotateCard(e) {
     var $card = e.target.closest(".card-container");
     console.log($card);

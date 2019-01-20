@@ -18,7 +18,9 @@ class VideoFeed extends React.Component {
 
   componentDidMount() {
     this.fetchVideos();
+    document.addEventListener("fb_init", e => window.FB.XFBML.parse());
   }
+
   fetchVideos(e) {
     let url = this.state.fetchFrom;
     let sSource;

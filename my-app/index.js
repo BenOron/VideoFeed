@@ -6,14 +6,13 @@ const filterQuery = require("./src/db/filterQuery");
 
 app.use(express.static(__dirname + "/build"));
 
-app.get("/videos/:source", async (req, res, next) => {
+app.get("/videos/:source", (req, res, next) => {
   if (req.params.source) {
     res.json(filterQuery(VideoList, req.params.source));
   }
-  res.json(VideoList);
 });
 
-app.get("/videos", async (req, res, next) => {
+app.get("/videos", (req, res, next) => {
   res.json(VideoList);
 });
 
