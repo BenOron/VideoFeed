@@ -22,7 +22,7 @@ npm run build
 ```
 
 ```
-npm start or npm startwin 
+npm start or npm run startwin 
 ```
 
 
